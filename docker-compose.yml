@@ -1,0 +1,23 @@
+version: '3'
+services:
+  backend:
+    image: tictactoe_server
+    build:
+      context: ./backend
+    ports:
+      - "5000:5000"
+    networks:
+      - app-network
+
+  frontend:
+    image: tictactoe_client
+    build:
+      context: ./frontend
+    ports:
+      - "5173:5173"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

@@ -1,0 +1,48 @@
+.game-mode-selection {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: white;
+  padding: 20px 40px 50px 40px;
+  border-radius: 10px;
+}
+
+.welcome{
+  border-bottom: 1px solid;
+  margin-bottom: 0px;
+}
+
+.modal h2{
+  margin-left: 10px;
+}
+
+.mode_buttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.mode_buttons button{
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #213547;
+  color: #DDDDDD;
+  font-size: 16px;
+  border: 1px solid #242424;
+}
+
+.mode_buttons button:hover{
+  cursor: pointer;
+  background-color: #D8D8D8;
+  color: #242424;
+  border: none;
+}

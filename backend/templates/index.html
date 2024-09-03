@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Notification</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Additional styling for popup animation */
+        .popup-show {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-100">
+
+    <div class="h-[1500px] p-8 flex flex-col items-center justify-center space-y-4">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">It's Game time ...</h1>
+
+    <div id="popup" class="fixed bottom-4 right-4 bg-white border border-gray-300 p-4 shadow-lg rounded-lg hidden popup-show">
+        <p class="text-gray-900">You have reached the bottom of the page!</p>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var scrollableHeight = document.documentElement.scrollHeight;
+            var scrollTop = window.pageYOffset;
+            var windowHeight = window.innerHeight;
+
+            if (scrollTop + windowHeight >= scrollableHeight) {
+                document.getElementById('popup').classList.remove('hidden');
+                document.getElementById('popup').classList.add('block');
+            }
+        });
+    </script>
+</body>
+</html>
